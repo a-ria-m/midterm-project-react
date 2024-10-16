@@ -1,4 +1,3 @@
-// src/components/display_all_item.js
 import React from 'react';
 
 function DisplayAllItem({ itemList }) {

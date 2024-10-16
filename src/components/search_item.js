@@ -1,4 +1,3 @@
-// src/components/search_item.js
 import React, { useState } from 'react';
 
 const SearchItem = ({ onSearch }) => {
@@ -27,7 +26,6 @@ const SearchItem = ({ onSearch }) => {
     // Clear input
     setId('');
 
-    // Remove message after 5 seconds
     setTimeout(() => setMessage(''), 5000);
   };
 

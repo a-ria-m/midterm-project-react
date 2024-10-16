@@ -23,7 +23,7 @@ const SortItem = ({ itemList = [], onSort }) => {
     });
 
     setSortedItems(sorted);
-    if (onSort) onSort(sorted); // Optionally notify parent
+    if (onSort) onSort(sorted); 
   };
 
   return (
@@ -57,7 +57,6 @@ const SortItem = ({ itemList = [], onSort }) => {
         </button>
       </div>
 
-      {/* Display sorted items in a table */}
       {sortedItems.length > 0 && (
         <table className="item-table">
           <thead>
