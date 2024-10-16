@@ -1,11 +1,10 @@
-import './App.css'; 
-import Dashboard from './components/dashboard.js';
+import React from 'react';
+import Dashboard from './Dashboard';
+
 function App() {
-    return (
-        <Dashboard/>
+  return (
+      <Dashboard/>
+  );
+}
 
-        )
-    }
-
-    export default App;
-    
+export default App;

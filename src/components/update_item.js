@@ -7,8 +7,11 @@ const UpdateItem = ({ onUpdate }) => {
   const [newValue, setNewValue] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleUpdate = () => {
-    if (!id.trim() || !newValue) {
+  const handleUpdate = (e) => {
+    e.preventDefault();
+
+    // validation thingi
+    if (!id.trim() || newValue === '') {
       setMessage('All fields are required.');
       return;
     }
@@ -30,44 +33,51 @@ const UpdateItem = ({ onUpdate }) => {
       setMessage('Item not found!');
     }
 
-    // Clear inputs
+    // Clear input
     setId('');
     setNewValue('');
     setField('quantity');
+
+    setTimeout(() => setMessage(''), 5000);
   };
 
   return (
     <div className="section">
       <h2>Update Item</h2>
-      <div className="form-group">
-        <input
-          type="text"
-          value={id}
-          placeholder="ID"
-          onChange={(e) => setId(e.target.value)}
-          className="input-field"
-        />
-        <select
-          value={field}
-          onChange={(e) => setField(e.target.value)}
-          className="select-field"
-        >
-          <option value="quantity">Quantity</option>
-          <option value="price">Price</option>
-        </select>
-        <input
-          type="number"
-          value={newValue}
-          placeholder="New Value"
-          onChange={(e) => setNewValue(e.target.value)}
-          className="input-field"
-          min="0"
-          step={field === 'price' ? '0.01' : '1'}
-        />
-        <button className="button warning-button" onClick={handleUpdate}>
-          Update Item
-        </button>
-      </div>
+      <form onSubmit={handleUpdate}>
+        <div className="form-group">
+          <input
+            type="text"
+            value={id}
+            placeholder="ID"
+            onChange={(e) => setId(e.target.value)}
+            className="input-field"
+            required
+          />
+          <select
+            value={field}
+            onChange={(e) => setField(e.target.value)}
+            className="select-field"
+            required
+          >
+            <option value="quantity">Quantity</option>
+            <option value="price">Price</option>
+          </select>
+          <input
+            type="number"
+            value={newValue}
+            placeholder="New Value"
+            onChange={(e) => setNewValue(e.target.value)}
+            className="input-field"
+            min="0"
+            step={field === 'price' ? '0.01' : '1'}
+            required
+          />
+          <button type="submit" className="button warning-button">
+            Update Item
+          </button>
+        </div>
+      </form>
       {message && <p className="message">{message}</p>}
     </div>
   );

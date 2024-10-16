@@ -27,7 +27,6 @@ const SearchItem = ({ onSearch }) => {
     // Clear input
     setId('');
 
-    // Remove message after 5 seconds
     setTimeout(() => setMessage(''), 5000);
   };
 

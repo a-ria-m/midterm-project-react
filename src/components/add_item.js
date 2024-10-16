@@ -8,11 +8,10 @@ function AddItem({ onAdd }) {
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState('Electronics');
   const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState(''); // 'success' or 'error'
-  const [errors, setErrors] = useState({}); // To track field-specific errors
+  const [messageType, setMessageType] = useState(''); // for validation stuff
+  const [errors, setErrors] = useState({}); 
 
-  // Regex to allow only letters and numbers
-  const alphanumericRegex = /^[A-Za-z0-9]+$/;
+  const alphanumericRegex = /^[A-Za-z0-9]+$/; //only alphanumeric
 
   const validateInputs = () => {
     const newErrors = {};
@@ -35,7 +34,7 @@ function AddItem({ onAdd }) {
 
     setErrors(newErrors);
 
-    // Return true if no errors
+    // yes if no errrors
     return Object.keys(newErrors).length === 0;
   };
 
@@ -48,7 +47,7 @@ function AddItem({ onAdd }) {
       return;
     }
 
-    // Create new item object
+    // create a new object
     const newItem = {
       id: id.trim(),
       name: name.trim(),
@@ -85,7 +84,7 @@ function AddItem({ onAdd }) {
       <h2>Add Item</h2>
       <form onSubmit={handleSubmit} noValidate>
         <div className="form-group">
-  
+          {/* ID */}
           <label htmlFor="id">ID</label>
           <input
             type="text"
@@ -98,7 +97,7 @@ function AddItem({ onAdd }) {
           />
           {errors.id && <p className="error-message">{errors.id}</p>}
 
-          {/* Name Field */}
+          {/* Name */}
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -111,7 +110,7 @@ function AddItem({ onAdd }) {
           />
           {errors.name && <p className="error-message">{errors.name}</p>}
 
-          {/* Quantity Field */}
+          {/* Quantity */}
           <label htmlFor="quantity">Quantity</label>
           <input
             type="number"
@@ -125,7 +124,7 @@ function AddItem({ onAdd }) {
           />
           {errors.quantity && <p className="error-message">{errors.quantity}</p>}
 
-          {/* Price Field */}
+          {/* Price */}
           <label htmlFor="price">Price ($)</label>
           <input
             type="number"
@@ -140,7 +139,7 @@ function AddItem({ onAdd }) {
           />
           {errors.price && <p className="error-message">{errors.price}</p>}
 
-          {/* Category Field */}
+          {/* Category */}
           <label htmlFor="category">Category</label>
           <select
             id="category"
@@ -156,7 +155,7 @@ function AddItem({ onAdd }) {
             <option value="Others">Others</option>
           </select>
 
-          {/* Submit Button */}
+          {/* Submit */}
           <button type="submit">Add Item</button>
         </div>
       </form>
