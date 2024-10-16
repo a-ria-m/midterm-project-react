@@ -1,4 +1,4 @@
-// src/components/UpdateItem.js
+
 import React, { useState } from 'react';
 
 const UpdateItem = ({ onUpdate }) => {
