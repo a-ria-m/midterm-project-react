@@ -1,4 +1,4 @@
-// src/components/remove_item.js
+
 import React, { useState } from 'react';
 
 function RemoveItem({ onRemove }) {
