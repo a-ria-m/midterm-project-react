@@ -1,4 +1,4 @@
-// src/components/SortItem.js
+
 import React, { useState } from 'react';
 
 const SortItem = ({ itemList = [], onSort }) => {
