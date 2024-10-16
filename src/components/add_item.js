@@ -1,4 +1,4 @@
-// src/components/add_item.js
+
 import React, { useState } from 'react';
 
 function AddItem({ onAdd }) {
@@ -9,9 +9,9 @@ function AddItem({ onAdd }) {
   const [category, setCategory] = useState('Electronics');
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState(''); // 'success' or 'error'
-  const [errors, setErrors] = useState({}); // To track field-specific errors
+  const [errors, setErrors] = useState({}); 
 
-  // Regex to allow only letters and numbers
+
   const alphanumericRegex = /^[A-Za-z0-9]+$/;
 
   const validateInputs = () => {
@@ -35,7 +35,6 @@ function AddItem({ onAdd }) {
 
     setErrors(newErrors);
 
-    // Return true if no errors
     return Object.keys(newErrors).length === 0;
   };
 
@@ -48,7 +47,6 @@ function AddItem({ onAdd }) {
       return;
     }
 
-    // Create new item object
     const newItem = {
       id: id.trim(),
       name: name.trim(),
