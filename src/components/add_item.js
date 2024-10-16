@@ -1,4 +1,4 @@
-// src/components/add_item.js
+
 import React, { useState } from 'react';
 
 function AddItem({ onAdd }) {
