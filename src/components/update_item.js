@@ -1,4 +1,4 @@
-// src/components/UpdateItem.js
+
 import React, { useState } from 'react';
 
 const UpdateItem = ({ onUpdate }) => {
@@ -30,7 +30,7 @@ const UpdateItem = ({ onUpdate }) => {
       setMessage('Item not found!');
     }
 
-    // Clear inputs
+
     setId('');
     setNewValue('');
     setField('quantity');
