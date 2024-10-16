@@ -1,15 +1,14 @@
-// src/components/remove_item.js
+
 import React, { useState } from 'react';
 
 function RemoveItem({ onRemove }) {
   const [id, setId] = useState('');
   const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState(''); // 'success' or 'error'
+  const [messageType, setMessageType] = useState(''); 
 
   const handleRemove = (e) => {
     e.preventDefault();
 
-    // Call onRemove and handle response
     const result = onRemove(id.trim());
     if (result.success) {
       setMessage(`Item "${result.name}" has been removed from the inventory.`);
@@ -19,10 +18,9 @@ function RemoveItem({ onRemove }) {
       setMessageType('error');
     }
 
-    // Clear input
+
     setId('');
 
-    // Remove message after 5 seconds
     setTimeout(() => {
       setMessage('');
       setMessageType('');
