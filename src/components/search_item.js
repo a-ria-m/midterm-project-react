@@ -1,4 +1,4 @@
-// src/components/search_item.js
+
 import React, { useState } from 'react';
 
 const SearchItem = ({ onSearch }) => {
