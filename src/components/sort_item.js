@@ -1,4 +1,4 @@
-// src/components/SortItem.js
+
 import React, { useState } from 'react';
 
 const SortItem = ({ itemList = [], onSort }) => {
@@ -23,7 +23,7 @@ const SortItem = ({ itemList = [], onSort }) => {
     });
 
     setSortedItems(sorted);
-    if (onSort) onSort(sorted); // Optionally notify parent
+    if (onSort) onSort(sorted); 
   };
 
   return (
